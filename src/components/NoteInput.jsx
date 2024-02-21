@@ -71,7 +71,7 @@ class NoteInput extends React.Component {
                             value={title}
                             onChange={this.onTitleChangeEventHandler}
                         />
-                        <p className="text-muted">{remainingChars} karakter tersisa</p>                        
+                        <p className="text-light">{remainingChars} karakter tersisa</p>                        
                     </div>
                     <textarea
                         className="form-control bg-dark text-light border-0 p-2 mb-3"

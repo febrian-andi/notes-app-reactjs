@@ -12,11 +12,13 @@ class NotesApp extends React.Component {
       notes: getData(),
       searchQuery: ''
     };
-    
+
     this.onDeleteHandler = this.onDeleteHandler.bind(this);
     this.onAddNoteHandler = this.onAddNoteHandler.bind(this);
     this.onArchivedHandler = this.onArchivedHandler.bind(this);
     this.onSearchHandler = this.onSearchHandler.bind(this);
+    this.checkArchivedNotes = this.checkArchivedNotes.bind(this);
+    this.checkUnarchivedNotes = this.checkUnarchivedNotes.bind(this);
   }
 
   onDeleteHandler(id) {
@@ -24,12 +26,9 @@ class NotesApp extends React.Component {
     if (result) {
       const notes = this.state.notes.filter((note) => note.id !== id);
       this.setState({ notes });
-      toast.success("Catatan Berhasil Dihapus!");
-    } else {
-      toast.success("Hapus Catatan Dibatalkan!");
     }
   }
-  
+
   onAddNoteHandler({ title, body }) {
     this.setState((prevState) => {
       return {
@@ -65,33 +64,53 @@ class NotesApp extends React.Component {
     this.setState({ searchQuery });
   }
 
-  render(){
+  checkArchivedNotes() {
+    const archivedNotes = this.state.notes.filter((note) => note.archived === true);
+    return archivedNotes.length;
+  }
+
+  checkUnarchivedNotes() {
+    const unarchivedNotes = this.state.notes.filter((note) => note.archived === false);
+    return unarchivedNotes.length;
+  }
+
+  render() {
     const filteredNotes = this.state.notes.filter((note) =>
       note.title.toLowerCase().includes(this.state.searchQuery.toLowerCase())
     );
 
     return (
       <div className="container py-2 my-3">
-        <NoteInput addNote={this.onAddNoteHandler}/>
+        <NoteInput addNote={this.onAddNoteHandler} />
         <div className="my-4">
-          <NotesSearchBar onSearch={this.onSearchHandler}/>
+          <NotesSearchBar onSearch={this.onSearchHandler} />
         </div>
         <div>
           <h2 style={{ fontWeight: "900", background: "linear-gradient(to right, #8158BD 0%, #D4BFFF 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Catatan Anda</h2>
-          {this.state.notes.length === 0 ? 
+          {this.checkUnarchivedNotes() === 0 ?
             <div className="text-light text-center">
+              <img src="../images/not-found.png"
+                style={{
+                  height: "200px"
+                }}
+              />
               <p className="text-light">Tidak ada catatan</p>
             </div> :
-            <NoteList notes={filteredNotes} onDelete={this.onDeleteHandler} onArchive={this.onArchivedHandler}/>
+            <NoteList notes={filteredNotes} onDelete={this.onDeleteHandler} onArchive={this.onArchivedHandler} />
           }
         </div>
         <div className="mt-5">
           <h2 className="text-light" style={{ fontWeight: "900", background: "linear-gradient(to right, #8158BD 0%, #D4BFFF 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Arsip</h2>
-          {this.state.notes.length === 0 ? 
+          {this.checkArchivedNotes() === 0 ?
             <div className="text-light text-center">
+              <img src="../images/not-found.png"
+                style={{
+                  height: "200px"
+                }}
+              />
               <p className="text-light">Tidak ada catatan</p>
             </div> :
-            <ArchivedNoteList notes={filteredNotes} onDelete={this.onDeleteHandler} onArchive={this.onArchivedHandler}/>
+            <ArchivedNoteList notes={filteredNotes} onDelete={this.onDeleteHandler} onArchive={this.onArchivedHandler} />
           }
         </div>
       </div>
