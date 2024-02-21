@@ -1,5 +1,4 @@
-# Result
-[https://github.com/febrian-andi/notes-app-reactjs](https://notes-app-reactjs-by-fan.vercel.app/)
+Result : (https://notes-app-reactjs-by-fan.vercel.app/)
 
 # React + Vite
 
