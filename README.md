@@ -1,4 +1,4 @@
-Result : (https://notes-app-reactjs-by-fan.vercel.app/)
+Result : https://notes-app-reactjs-by-fan.vercel.app/
 
 # React + Vite
 
