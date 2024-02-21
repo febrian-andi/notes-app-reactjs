@@ -101,7 +101,7 @@ function NoteItem({ title, body, id, createdAt, archived, onDelete, onArchive })
                     }
                 </div>
             </div>
-            {showModal && <NoteDetail show={showModal} onHide={handleHideModal} id={id}/>}
+            {showModal && <NoteDetail show={showModal} onHide={handleHideModal} title={title} body={body}/>}
         </div>
     );
 }

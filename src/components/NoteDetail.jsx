@@ -1,10 +1,7 @@
 import React from "react";
 import { getData } from "../utils/data";
 
-function NoteDetail({ show, onHide, id }) {
-    const notes = getData();
-    const noteById = notes.find((note) => note.id === id);
-    console.log(noteById);
+function NoteDetail({ show, onHide, title, body }) {
     return (
         <div className={`modal fade ${show ? "show" : ""}`} tabIndex="-1" role="dialog" style={{ display: show ? 'block' : 'none' }}>
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -17,11 +14,11 @@ function NoteDetail({ show, onHide, id }) {
                     }}
                 >
                     <div className="modal-header">
-                        <h5 className="modal-title fw-bold">{noteById.title}</h5>
+                        <h5 className="modal-title fw-bold">{title}</h5>
                         <button type="button" className="btn-close" onClick={onHide}></button>
                     </div>
                     <div className="modal-body">
-                        <p>{noteById.body}</p>
+                        <p>{body}</p>
                     </div>
                 </div>
             </div>
