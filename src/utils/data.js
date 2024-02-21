@@ -10,7 +10,7 @@ return [
         Fitur-fitur lain yang ditawarkan oleh ReactJS termasuk dukungan untuk JSX (JavaScript XML), yang memungkinkan pengembang untuk menulis kode HTML dalam JavaScript, serta kemampuan untuk merender komponen baik di sisi klien maupun server (server-side rendering), yang membantu meningkatkan SEO dan kinerja aplikasi.
         Dengan demikian, ReactJS menjadi pilihan yang sangat cocok untuk pengembangan aplikasi dengan antarmuka yang kompleks dan performa tinggi. Dengan komunitas yang besar dan dukungan yang terus berkembang, ReactJS tetap menjadi salah satu pilihan utama bagi para pengembang dalam membangun aplikasi modern.`,
         archived: false,
-        createdAt: '2022-04-14T04:27:34.572z',
+        createdAt: '2024-02-20T04:27:34.572z',
     },
     {
         id: 2,
@@ -21,14 +21,14 @@ return [
         Selain itu, Vue memiliki ekosistem yang kaya, termasuk berbagai plugin dan alat-alat pendukung yang memudahkan pengembangan aplikasi. Dengan adanya komunitas yang besar dan aktif, pengembang dapat dengan mudah menemukan solusi untuk tantangan yang mereka hadapi selama proses pengembangan.
         Dengan kemampuan untuk mengadopsi secara bertahap, struktur yang jelas, dan dukungan ekosistem yang kuat, Vue menjadi pilihan yang populer bagi pengembang yang mencari kerangka kerja yang fleksibel dan mudah digunakan untuk membangun antarmuka pengguna yang dinamis dan responsif.`,
         archived: true,
-        createdAt: '2022-04-14T04:27:34.572z',
+        createdAt: '2024-02-20T04:27:34.572z',
     },
     {
         id: 3,
         title: 'Angular Js',
         body: 'AngularJS adalah framework software open-source yang digunakan untuk membuat aplikasi single-page berbasis website. Framework ini juga cukup populer bagi para developer untuk membuat menu animasi di laman web HTML.',
         archived: false,
-        createdAt: '2022-04-14T04:27:34.572z',
+        createdAt: '2024-02-21T04:27:34.572z',
     },
 ];
 }
